@@ -1,0 +1,7 @@
+pw_main:
+    resource: "@PWMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+oc_platform:
+    resource: "@OCPlatformBundle/Resources/config/routing.yml"
+    prefix:   /platform
