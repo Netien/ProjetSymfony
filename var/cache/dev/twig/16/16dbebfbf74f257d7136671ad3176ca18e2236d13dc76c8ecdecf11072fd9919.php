@@ -47,7 +47,10 @@ class __TwigTemplate_461a59152656bf2a8578fb0fa10dd12ebdfd0531698b85a7335038dd7df
 
         // line 6
         echo "
-<p> Hello tout le monde;
+<p> Hello ";
+        // line 7
+        echo twig_escape_filter($this->env, ($context["name"] ?? $this->getContext($context, "name")), "html", null, true);
+        echo "</p>
 
 ";
         
@@ -70,7 +73,7 @@ class __TwigTemplate_461a59152656bf2a8578fb0fa10dd12ebdfd0531698b85a7335038dd7df
 
     public function getDebugInfo()
     {
-        return array (  49 => 6,  40 => 5,  11 => 3,);
+        return array (  52 => 7,  49 => 6,  40 => 5,  11 => 3,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -89,7 +92,7 @@ class __TwigTemplate_461a59152656bf2a8578fb0fa10dd12ebdfd0531698b85a7335038dd7df
 
 {% block body %}
 
-<p> Hello tout le monde;
+<p> Hello {{name}}</p>
 
 {% endblock %}
 ", "PWMainBundle:Default:index.html.twig", "/Users/rrtaya/Site Symfony/Symfony/src/PW/MainBundle/Resources/views/Default/index.html.twig");

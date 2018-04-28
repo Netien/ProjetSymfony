@@ -38,19 +38,31 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
     </head>
 
     <body>
-            <nav class=\"navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow\">
-      <a class=\"navbar-brand col mr-0\" href=\"#\" id=\"title\">CreateAndShare</a>
-      <ul class=\"navbar-nav px-3\">
-        <li class=\"nav-item text-nowrap\">
-          <a class=\"nav-link\" href=\"#\">Sign out</a>
-        </li>
-      </ul>
-    </nav>
-    \t<header>
-    \t\t<h1>Welcome to Create&amp;Share! Already a member ?</h1> 
-    \t</header>
+      <div class=\"container\">
+        <nav class=\"navbar navbar-default\">
+
+          <div class=\"container-fluid\">
+            <div class=\"navbar-header\">
+              <a class=\"navbar-brand\" href=\"#\">CreateAndShare</a>
+            </div>
+            <div class=\"navbar col-sm-8\" id=\"navbar\">
+              <ul class=\"list-inline\">
+                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
+                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
+              </ul>
+            </div>
+            <div class=\"navbar col-sm w-25 p-3\" id=\"navbar\">
+              <ul class=\"nav navbar-nav d-flex justify-content-end\">
+                <li>fnzuofz</li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
     <div class=\"container-fluid\">
       <div class=\"row\">
+
         <nav class=\"col-md-2 d-none d-md-block bg-light sidebar\">
           <div class=\"sidebar-sticky\">
             <ul class=\"nav flex-column\">
@@ -91,73 +103,35 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
                 </a>
               </li>
             </ul>
-
-            <h6 class=\"sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted\">
-              <span>Saved reports</span>
-              <a class=\"d-flex align-items-center text-muted\" href=\"#\">
-                <span data-feather=\"plus-circle\"></span>
-              </a>
-            </h6>
-            <ul class=\"nav flex-column mb-2\">
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file-text\"></span>
-                  Current month
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file-text\"></span>
-                  Last quarter
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file-text\"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file-text\"></span>
-                  Year-end sale
-                </a>
-              </li>
-            </ul>
           </div>
         </nav>
-    
-
+    <div class=\"col-xl\">
         <main role=\"main\" class=\"col-md-9 ml-sm-auto col-lg-10 px-4\">
           <div class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">
             <h1 class=\"h2\">Dashboard</h1>
-            <div class=\"btn-toolbar mb-2 mb-md-0\">
-              <div class=\"btn-group mr-2\">
-                <button class=\"btn btn-sm btn-outline-secondary\">Share</button>
-                <button class=\"btn btn-sm btn-outline-secondary\">Export</button>
-              </div>
-              <button class=\"btn btn-sm btn-outline-secondary dropdown-toggle\">
-                <span data-feather=\"calendar\"></span>
-                This week
-              </button>
-            </div>
           </div>
+        
+
     \t";
-        // line 120
+        // line 90
         $this->displayBlock('body', $context, $blocks);
-        // line 122
-        echo "    \t<footer>
+        // line 92
+        echo "      </main>
+      </div>
+    \t<footer>
     \t
     \t</footer>
-    </div>
+</div>
 </div>
     </body>
-
-
-
     <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\" integrity=\"sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ\" crossorigin=\"anonymous\"></script>
 <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js\" integrity=\"sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm\" crossorigin=\"anonymous\"></script>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>
+    <script>window.jQuery || document.write('<script src=\"../../assets/js/vendor/jquery.min.js\"><\\/script>')</script>
+    <script src=\"../../dist/js/bootstrap.min.js\"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src=\"../../assets/js/ie10-viewport-bug-workaround.js\"></script>
 </html>
 
 
@@ -170,7 +144,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 
     }
 
-    // line 120
+    // line 90
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -179,7 +153,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 121
+        // line 91
         echo "    \t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -196,7 +170,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 
     public function getDebugInfo()
     {
-        return array (  183 => 121,  174 => 120,  149 => 122,  147 => 120,  26 => 1,);
+        return array (  157 => 91,  148 => 90,  119 => 92,  117 => 90,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -224,19 +198,31 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
     </head>
 
     <body>
-            <nav class=\"navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow\">
-      <a class=\"navbar-brand col mr-0\" href=\"#\" id=\"title\">CreateAndShare</a>
-      <ul class=\"navbar-nav px-3\">
-        <li class=\"nav-item text-nowrap\">
-          <a class=\"nav-link\" href=\"#\">Sign out</a>
-        </li>
-      </ul>
-    </nav>
-    \t<header>
-    \t\t<h1>Welcome to Create&amp;Share! Already a member ?</h1> 
-    \t</header>
+      <div class=\"container\">
+        <nav class=\"navbar navbar-default\">
+
+          <div class=\"container-fluid\">
+            <div class=\"navbar-header\">
+              <a class=\"navbar-brand\" href=\"#\">CreateAndShare</a>
+            </div>
+            <div class=\"navbar col-sm-8\" id=\"navbar\">
+              <ul class=\"list-inline\">
+                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
+                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
+              </ul>
+            </div>
+            <div class=\"navbar col-sm w-25 p-3\" id=\"navbar\">
+              <ul class=\"nav navbar-nav d-flex justify-content-end\">
+                <li>fnzuofz</li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
     <div class=\"container-fluid\">
       <div class=\"row\">
+
         <nav class=\"col-md-2 d-none d-md-block bg-light sidebar\">
           <div class=\"sidebar-sticky\">
             <ul class=\"nav flex-column\">
@@ -277,71 +263,33 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
                 </a>
               </li>
             </ul>
-
-            <h6 class=\"sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted\">
-              <span>Saved reports</span>
-              <a class=\"d-flex align-items-center text-muted\" href=\"#\">
-                <span data-feather=\"plus-circle\"></span>
-              </a>
-            </h6>
-            <ul class=\"nav flex-column mb-2\">
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file-text\"></span>
-                  Current month
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file-text\"></span>
-                  Last quarter
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file-text\"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file-text\"></span>
-                  Year-end sale
-                </a>
-              </li>
-            </ul>
           </div>
         </nav>
-    
-
+    <div class=\"col-xl\">
         <main role=\"main\" class=\"col-md-9 ml-sm-auto col-lg-10 px-4\">
           <div class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">
             <h1 class=\"h2\">Dashboard</h1>
-            <div class=\"btn-toolbar mb-2 mb-md-0\">
-              <div class=\"btn-group mr-2\">
-                <button class=\"btn btn-sm btn-outline-secondary\">Share</button>
-                <button class=\"btn btn-sm btn-outline-secondary\">Export</button>
-              </div>
-              <button class=\"btn btn-sm btn-outline-secondary dropdown-toggle\">
-                <span data-feather=\"calendar\"></span>
-                This week
-              </button>
-            </div>
           </div>
+        
+
     \t{% block body %}
     \t{% endblock %}
+      </main>
+      </div>
     \t<footer>
     \t
     \t</footer>
-    </div>
+</div>
 </div>
     </body>
-
-
-
     <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\" integrity=\"sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ\" crossorigin=\"anonymous\"></script>
 <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js\" integrity=\"sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm\" crossorigin=\"anonymous\"></script>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>
+    <script>window.jQuery || document.write('<script src=\"../../assets/js/vendor/jquery.min.js\"><\\/script>')</script>
+    <script src=\"../../dist/js/bootstrap.min.js\"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src=\"../../assets/js/ie10-viewport-bug-workaround.js\"></script>
 </html>
 
 

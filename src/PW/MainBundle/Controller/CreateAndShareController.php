@@ -9,7 +9,18 @@ class CreateAndShareController extends Controller
 {
 	public function indexAction()
 	{
-		return $this->render('PWMainBundle:Default:index.html.twig');
+
+
+// Si la requête courante n'est pas derrière un pare-feu, $token est null
+
+// Sinon, on récupère l'utilisateur
+$user = $this->getUser();
+
+// Si l'utilisateur courant est anonyme, $user vaut « anon. »
+
+// Sinon, c'est une instance de notre entité User, on peut l'utiliser normalement
+
+		return $this->render('PWMainBundle:Default:index.html.twig',array('name' =>$user->getUsername()));
 	}
 
 
