@@ -8,7 +8,7 @@ class CreateAndShareController
 {
 	public function indexAction()
 	{
-		return new Response("Ceci est un test");
+		return new Response("<body>Ceci est un test<body>");
 	}
 
 

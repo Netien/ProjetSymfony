@@ -85,6 +85,8 @@
   'OCPlatformBundle:Advert:view.html.twig' => __DIR__.'/../../../src/OC/PlatformBundle/Resources/views/Advert/view.html.twig',
   'OCPlatformBundle:Default:index.html.twig' => __DIR__.'/../../../src/OC/PlatformBundle/Resources/views/Default/index.html.twig',
   'PWMainBundle:Default:index.html.twig' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/Default/index.html.twig',
+  'PWUserBundle::layout_auth.html.twig' => __DIR__.'/../../../src/PW/UserBundle/Resources/views/layout_auth.html.twig',
+  'PWUserBundle:Security:login.html.twig' => __DIR__.'/../../../src/PW/UserBundle/Resources/views/Security/login.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views/Profiler/dump.html.twig',
   'WebProfilerBundle:Collector:ajax.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/ajax.html.twig',
   'WebProfilerBundle:Collector:cache.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/cache.html.twig',

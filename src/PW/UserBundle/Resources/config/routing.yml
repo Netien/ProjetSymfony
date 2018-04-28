@@ -1,0 +1,7 @@
+pw_user_homepage:
+    path:     /login
+    defaults: { _controller: PWUserBundle:Security:login }
+
+pw_main_homepage:
+    path:     /home
+    defaults: { _controller: PWMainBundle:CreateAndShare:index }

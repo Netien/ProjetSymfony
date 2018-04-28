@@ -5,25 +5,20 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\RequestContext;
 
 /**
- * appDevDebugProjectContainerUrlMatcher.
- *
  * This class has been auto-generated
  * by the Symfony Routing Component.
  */
 class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher
 {
-    /**
-     * Constructor.
-     */
     public function __construct(RequestContext $context)
     {
         $this->context = $context;
     }
 
-    public function match($pathinfo)
+    public function match($rawPathinfo)
     {
         $allow = array();
-        $pathinfo = rawurldecode($pathinfo);
+        $pathinfo = rawurldecode($rawPathinfo);
         $trimmedPathinfo = rtrim($pathinfo, '/');
         $context = $this->context;
         $request = $this->request;
@@ -45,7 +40,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 // _profiler_home
                 if ('/_profiler' === $trimmedPathinfo) {
                     if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', '_profiler_home');
+                        return $this->redirect($rawPathinfo.'/', '_profiler_home');
                     }
 
                     return array (  '_controller' => 'web_profiler.controller.profiler:homeAction',  '_route' => '_profiler_home',);
@@ -62,11 +57,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return array (  '_controller' => 'web_profiler.controller.profiler:searchBarAction',  '_route' => '_profiler_search_bar',);
                     }
 
-                }
-
-                // _profiler_info
-                if (0 === strpos($pathinfo, '/_profiler/info') && preg_match('#^/_profiler/info/(?P<about>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_profiler_info')), array (  '_controller' => 'web_profiler.controller.profiler:infoAction',));
                 }
 
                 // _profiler_phpinfo
@@ -114,21 +104,59 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // pw_main_homepage
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'pw_main_homepage');
-            }
-
+        if ('/home' === $pathinfo) {
             return array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::indexAction',  '_route' => 'pw_main_homepage',);
         }
 
-        // oc_platform_homepage
-        if ('/platform' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'oc_platform_homepage');
+        if (0 === strpos($pathinfo, '/login')) {
+            // login
+            if ('/login' === $pathinfo) {
+                return array (  '_controller' => 'PW\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
             }
 
-            return array (  '_controller' => 'OC\\PlatformBundle\\Controller\\DefaultController::indexAction',  '_route' => 'oc_platform_homepage',);
+            // login_check
+            if ('/login_check' === $pathinfo) {
+                return array('_route' => 'login_check');
+            }
+
+        }
+
+        // logout
+        if ('/logout' === $pathinfo) {
+            return array('_route' => 'logout');
+        }
+
+        // pw_main_create_profile
+        if ('/signup' === $pathinfo) {
+            return array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::signupAction',  '_route' => 'pw_main_create_profile',);
+        }
+
+        if (0 === strpos($pathinfo, '/group')) {
+            // pw_main_create_group
+            if ('/group/create' === $pathinfo) {
+                return array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::creategrpAction',  '_route' => 'pw_main_create_group',);
+            }
+
+            // pw_main_join_group
+            if (0 === strpos($pathinfo, '/group/join') && preg_match('#^/group/join/(?P<idg>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'pw_main_join_group')), array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::joingrpAction',));
+            }
+
+            // pw_main_chat
+            if (preg_match('#^/group/(?P<idg>\\d+)/chat$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'pw_main_chat')), array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::chatAction',));
+            }
+
+            // pw_main_files
+            if (preg_match('#^/group/(?P<idg>\\d+)/files$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'pw_main_files')), array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::filesAction',));
+            }
+
+            // pw_main_project
+            if (preg_match('#^/group/(?P<idg>\\d+)/project$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'pw_main_project')), array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::projectAction',));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

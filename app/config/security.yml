@@ -2,23 +2,38 @@
 # https://symfony.com/doc/current/security.html
 security:
 
-    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
-    providers:
-        in_memory:
-            memory: ~
+  provider: main
 
-    firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+  encoders:
+    Symfony\Component\Security\Core\User\User: plaintext
+    PW\UserBundle\Entity\User: plaintext
+    
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
+  role_hierarchy:
+    ROLE_ADMIN:       ROLE_USER
 
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
+  providers:
+    main:
+      entity:
+        class:    PW\UserBundle\Entity\User
+        property: username
 
-            # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    main:
+      pattern:   ^/
+      anonymous: true
+      provider:  main
+      form_login:
+        login_path: login
+        check_path: login_check
+        default_target_path: pw_main_homepage
+      logout:
+        path:       logout
+        target:     login
+
+
+  access_control:
+    #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

@@ -1,10 +1,17 @@
 pw_main_homepage:
-    path:     /
+    path:     /home
     defaults: { _controller: PWMainBundle:CreateAndShare:index }
 
-pw_main_auth:
-    path:     /auth
-    defaults: { _controller: PWMainBundle:CreateAndShare:auth }
+login:
+    path: /login
+    defaults:
+        _controller: PWUserBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
 
 pw_main_create_profile:
     path:      /signup
