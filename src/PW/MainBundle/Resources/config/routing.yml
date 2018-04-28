@@ -1,0 +1,52 @@
+pw_main_homepage:
+    path:     /home
+    defaults: { _controller: PWMainBundle:CreateAndShare:index }
+
+login:
+    path: /login
+    defaults:
+        _controller: PWUserBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
+pw_main_create_profile:
+    path:      /signup
+    defaults: { _controller: PWMainBundle:CreateAndShare:signup }
+
+pw_main_create_group:
+    path:      /group/create
+    defaults: { _controller: PWMainBundle:CreateAndShare:creategrp }
+
+pw_main_join_group:
+    path:      /group/join/{idg}
+    defaults: { _controller: PWMainBundle:CreateAndShare:joingrp }
+    requirements:
+        idg: \d+
+
+pw_main_chat:
+    path:      /group/{idg}/chat
+    defaults: { _controller: PWMainBundle:CreateAndShare:chat }
+    requirements:
+        idg: \d+
+
+pw_main_files:
+    path:      /group/{idg}/files
+    defaults: { _controller: PWMainBundle:CreateAndShare:files }
+    requirements:
+        idg: \d+
+
+pw_main_project:
+    path:      /group/{idg}/project
+    defaults: { _controller: PWMainBundle:CreateAndShare:project }
+    requirements:
+        idg: \d+
+
+
+
+
+
+    

@@ -1,0 +1,40 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+
+  provider: main
+
+  encoders:
+    Symfony\Component\Security\Core\User\User: plaintext
+    PW\UserBundle\Entity\User: plaintext
+    
+
+  role_hierarchy:
+    ROLE_ADMIN:       ROLE_USER
+
+  providers:
+    main:
+      entity:
+        class:    PW\UserBundle\Entity\User
+        property: username
+
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    main:
+      pattern:   ^/
+      anonymous: true
+      provider:  main
+      form_login:
+        login_path: login
+        check_path: login_check
+        default_target_path: pw_main_homepage
+        always_use_default_target_path: true
+      logout:
+        path:       logout
+        target:     login
+
+
+  access_control:
+    #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

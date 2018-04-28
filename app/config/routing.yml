@@ -1,0 +1,4 @@
+pw_main:
+    resource: "@PWMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
