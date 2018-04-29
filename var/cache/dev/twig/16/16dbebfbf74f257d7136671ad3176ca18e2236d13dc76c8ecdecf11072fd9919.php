@@ -52,6 +52,7 @@ class __TwigTemplate_461a59152656bf2a8578fb0fa10dd12ebdfd0531698b85a7335038dd7df
         echo twig_escape_filter($this->env, ($context["name"] ?? $this->getContext($context, "name")), "html", null, true);
         echo "</p>
 
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -94,7 +95,8 @@ class __TwigTemplate_461a59152656bf2a8578fb0fa10dd12ebdfd0531698b85a7335038dd7df
 
 <p> Hello {{name}}</p>
 
+
 {% endblock %}
-", "PWMainBundle:Default:index.html.twig", "/Users/rrtaya/Site Symfony/Symfony/src/PW/MainBundle/Resources/views/Default/index.html.twig");
+", "PWMainBundle:Default:index.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/src/PW/MainBundle/Resources/views/Default/index.html.twig");
     }
 }

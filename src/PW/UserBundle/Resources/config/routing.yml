@@ -5,3 +5,9 @@ pw_user_homepage:
 pw_main_homepage:
     path:     /home
     defaults: { _controller: PWMainBundle:CreateAndShare:index }
+
+pw_main_chat:
+    path:      /group/{idg}/chat
+    defaults: { _controller: PWMainBundle:CreateAndShare:chat }
+    requirements:
+        idg: \d+

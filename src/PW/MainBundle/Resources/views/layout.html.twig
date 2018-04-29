@@ -4,7 +4,9 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/layout.css">
+        {% block stylesheets %}
+            <link href="{{ asset('layout.css') }}" rel="stylesheet" />
+        {% endblock %}
          <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -13,81 +15,50 @@
     </head>
 
     <body>
+      <div class="container" style="height:100%;width:100%;overflow:scroll">
       <div class="container">
         <nav class="navbar navbar-default">
 
-          <div class="container-fluid">
-            <div class="navbar-header">
+          <div class="container-fluid " style="float:left">
+            <div style="position:absolute;left:20px;width:100px" class="col" >
               <a class="navbar-brand" href="#">CreateAndShare</a>
             </div>
-            <div class="navbar col-sm-8" id="navbar">
-              <ul class="list-inline">
-                <li class="list-inline-item"><a href="">aie</a></li>
-                <li class="list-inline-item"><a href="">aie</a></li>
-              </ul>
-            </div>
-            <div class="navbar col-sm w-25 p-3" id="navbar">
-              <ul class="nav navbar-nav d-flex justify-content-end">
-                <li>fnzuofz</li>
-              </ul>
+            <div class="d-flex p-2 justify-content-around " style="min-width:75%">
+              
+              <div class="p-3">
+                <p><a href="" class="btn btn-primary" style="min-width:10%">Chat</a></p>
+              </div>
+              <div class="p-3">
+                <p><a href="" class="btn btn-primary" style="min-width:10%">Fichiers Partages</a></p>
+              </div>
+              <div class="p-3">
+                <p><a href="" class="btn btn-primary" style="min-width:10%">Projet</a></p>
+              </div>
             </div>
           </div>
         </nav>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <div class="row">
 
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
 
-              <ul>
-
               {% for groupe in arraygrp %}
                 <li class="nav-item">
-                  <a class="nav-link active" href="/group/{{groupe.id}}/chat">
+                  <a class="nav-link active" href={{groupe.url}}>
                     {{ groupe.titre }}
                   </a>
                 </li>
               {% else %}
                 <li>Pas de groupe trouve</li>
               {% endfor %}
-
-              
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  Dashboard
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  
-                  Products
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  
-                  Customers
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  
-                  Reports
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  
-                  Integrations
-                </a>
-              </li>
             </ul>
           </div>
         </nav>
-    <div class="col-xl">
+    <div class="col-xl" >
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
@@ -101,6 +72,7 @@
     	<footer>
     	
     	</footer>
+</div>
 </div>
 </div>
     </body>

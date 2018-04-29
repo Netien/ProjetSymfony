@@ -66,39 +66,67 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         <nav class=\"col-md-2 d-none d-md-block bg-light sidebar\">
           <div class=\"sidebar-sticky\">
             <ul class=\"nav flex-column\">
+
+              <ul>
+
+              ";
+        // line 47
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["arraygrp"] ?? $this->getContext($context, "arraygrp")));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["groupe"]) {
+            // line 48
+            echo "                <li class=\"nav-item\">
+                  <a class=\"nav-link active\" href=\"/group/";
+            // line 49
+            echo twig_escape_filter($this->env, $this->getAttribute($context["groupe"], "id", array()), "html", null, true);
+            echo "/chat\">
+                    ";
+            // line 50
+            echo twig_escape_filter($this->env, $this->getAttribute($context["groupe"], "titre", array()), "html", null, true);
+            echo "
+                  </a>
+                </li>
+              ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 54
+            echo "                <li>Pas de groupe trouve</li>
+              ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['groupe'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 56
+        echo "
+              
               <li class=\"nav-item\">
                 <a class=\"nav-link active\" href=\"#\">
-                  <span data-feather=\"home\"></span>
-                  Dashboard <span class=\"sr-only\">(current)</span>
+                  Dashboard
                 </a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file\"></span>
-                  Orders
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"shopping-cart\"></span>
+                  
                   Products
                 </a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"users\"></span>
+                  
                   Customers
                 </a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"bar-chart-2\"></span>
+                  
                   Reports
                 </a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"layers\"></span>
+                  
                   Integrations
                 </a>
               </li>
@@ -113,9 +141,9 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         
 
     \t";
-        // line 90
+        // line 97
         $this->displayBlock('body', $context, $blocks);
-        // line 92
+        // line 99
         echo "      </main>
       </div>
     \t<footer>
@@ -144,7 +172,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 
     }
 
-    // line 90
+    // line 97
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -153,7 +181,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 91
+        // line 98
         echo "    \t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -168,9 +196,14 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         return "PWMainBundle::layout.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  157 => 91,  148 => 90,  119 => 92,  117 => 90,  26 => 1,);
+        return array (  185 => 98,  176 => 97,  147 => 99,  145 => 97,  102 => 56,  95 => 54,  86 => 50,  82 => 49,  79 => 48,  74 => 47,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -226,39 +259,46 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         <nav class=\"col-md-2 d-none d-md-block bg-light sidebar\">
           <div class=\"sidebar-sticky\">
             <ul class=\"nav flex-column\">
+
+              <ul>
+
+              {% for groupe in arraygrp %}
+                <li class=\"nav-item\">
+                  <a class=\"nav-link active\" href=\"/group/{{groupe.id}}/chat\">
+                    {{ groupe.titre }}
+                  </a>
+                </li>
+              {% else %}
+                <li>Pas de groupe trouve</li>
+              {% endfor %}
+
+              
               <li class=\"nav-item\">
                 <a class=\"nav-link active\" href=\"#\">
-                  <span data-feather=\"home\"></span>
-                  Dashboard <span class=\"sr-only\">(current)</span>
+                  Dashboard
                 </a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file\"></span>
-                  Orders
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"shopping-cart\"></span>
+                  
                   Products
                 </a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"users\"></span>
+                  
                   Customers
                 </a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"bar-chart-2\"></span>
+                  
                   Reports
                 </a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"layers\"></span>
+                  
                   Integrations
                 </a>
               </li>
@@ -293,6 +333,6 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 </html>
 
 
-    ", "PWMainBundle::layout.html.twig", "/Users/rrtaya/Site Symfony/Symfony/src/PW/MainBundle/Resources/views/layout.html.twig");
+    ", "PWMainBundle::layout.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/src/PW/MainBundle/Resources/views/layout.html.twig");
     }
 }
