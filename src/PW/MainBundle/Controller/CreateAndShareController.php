@@ -11,16 +11,35 @@ class CreateAndShareController extends Controller
 	{
 
 
-// Si la requête courante n'est pas derrière un pare-feu, $token est null
+	
+		$user = $this->getUser();
 
-// Sinon, on récupère l'utilisateur
-$user = $this->getUser();
+		$repository = $this
+	  	->getDoctrine()
+	  	->getManager()
+	  	->getRepository('PWMainBundle:Groupe')
+		;
 
-// Si l'utilisateur courant est anonyme, $user vaut « anon. »
+		$listGroupes = $repository->findAll();
 
-// Sinon, c'est une instance de notre entité User, on peut l'utiliser normalement
+		$arraygrp = [];
 
-		return $this->render('PWMainBundle:Default:index.html.twig',array('name' =>$user->getUsername()));
+		$em = $this->getDoctrine()->getManager();
+
+		foreach ($listGroupes as $group) 
+		{
+	 		$id = $group->getId();
+	  		$arraygrp[] = array(
+    			'id' => $group->getId(),
+    			'titre' => $group->getTitre()
+    		);
+	  		
+		}
+
+		
+
+
+		return $this->render('PWMainBundle:Default:index.html.twig',array('name' =>$user->getUsername(), 'arraygrp' => $arraygrp));
 	}
 
 

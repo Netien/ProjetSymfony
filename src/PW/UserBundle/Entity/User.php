@@ -16,7 +16,7 @@ class User implements UserInterface
 {
 
    /**
-    * @ORM\ManyToMany(targetEntity="PW\MainBundle\Entity\Groupe")
+    * @ORM\ManyToMany(targetEntity="PW\MainBundle\Entity\Groupe", inversedBy="users")
     */
     private $groups;
 
@@ -241,4 +241,16 @@ class User implements UserInterface
     {
         return $this->groups;
     }
+
+    public function isInGroup(int $id)
+    {
+        $groupList = $this->groups;
+        $ids = [];
+        foreach ($groupList as $group) {
+            $ids[] = $group->getId();
+        }
+        return in_array($id, $ids);
+    }
+
+
 }
