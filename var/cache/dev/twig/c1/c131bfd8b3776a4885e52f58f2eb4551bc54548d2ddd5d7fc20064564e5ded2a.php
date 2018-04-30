@@ -61,23 +61,22 @@ class __TwigTemplate_f824e737d7090110be0b99f38f61d4906d073e01879f6ac7ad329005256
 
     <input type=\"submit\" value=\"Upload Document\" />
 </form>
-
+<br/>
 <h2>fichiers actuels : </h2>
-
 ";
-        // line 16
+        // line 15
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["listdocs"] ?? $this->getContext($context, "listdocs")));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["doc"]) {
-            // line 17
+            // line 16
             echo "  <li>
     <a class=\"nav-link active\" href=";
-            // line 18
+            // line 17
             echo twig_escape_filter($this->env, $this->getAttribute($context["doc"], "url", array()), "html", null, true);
             echo ">
       ";
-            // line 19
+            // line 18
             echo twig_escape_filter($this->env, $this->getAttribute($context["doc"], "name", array()), "html", null, true);
             echo "
     </a>
@@ -86,14 +85,14 @@ class __TwigTemplate_f824e737d7090110be0b99f38f61d4906d073e01879f6ac7ad329005256
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 23
+            // line 22
             echo "  <li>Pas encore de fichier partagé</li>
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doc'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 24
         echo "
 
 ";
@@ -117,7 +116,7 @@ class __TwigTemplate_f824e737d7090110be0b99f38f61d4906d073e01879f6ac7ad329005256
 
     public function getDebugInfo()
     {
-        return array (  97 => 25,  90 => 23,  81 => 19,  77 => 18,  74 => 17,  69 => 16,  59 => 9,  55 => 8,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  96 => 24,  89 => 22,  80 => 18,  76 => 17,  73 => 16,  68 => 15,  59 => 9,  55 => 8,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -142,9 +141,8 @@ class __TwigTemplate_f824e737d7090110be0b99f38f61d4906d073e01879f6ac7ad329005256
 
     <input type=\"submit\" value=\"Upload Document\" />
 </form>
-
+<br/>
 <h2>fichiers actuels : </h2>
-
 {% for doc in listdocs %}
   <li>
     <a class=\"nav-link active\" href={{doc.url}}>

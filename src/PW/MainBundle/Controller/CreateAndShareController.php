@@ -127,6 +127,20 @@ class CreateAndShareController extends Controller
 		$user = $this->getUser();
 		$currGroup = $repository->find($idg);
 
+		$urlChat = $this->get('router')->generate(
+            	'pw_main_chat', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$urlFiles = $this->get('router')->generate(
+            	'pw_main_files', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$urlProject = $this->get('router')->generate(
+            	'pw_main_project', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$sections = ['chat' => $urlChat, 'files' => $urlFiles, 'project' => $urlProject];
+
 
 		if ($request->isMethod('POST')) {
 
@@ -187,7 +201,8 @@ class CreateAndShareController extends Controller
 			'group' => $currGroup,
 			'listMessages' => array_reverse($listMessages),
 			'arraygrp' => $arraygrp,
-			'form' => $form->createView()
+			'form' => $form->createView(),
+			'sections' => $sections
 		));
 	}
 
@@ -252,8 +267,12 @@ class CreateAndShareController extends Controller
 
 		}
 
+
+		$currGroup = $repository->find($idg);
+
+
 		$documentsRepository = $em->getRepository('PWMainBundle:Document');
-		$listDocuments = $documentsRepository->findAll();
+		$listDocuments = $documentsRepository->findBy(array('group' => $currGroup));
 		$docsinf = [];
 
 		foreach ($listDocuments as $doc) 
@@ -270,18 +289,37 @@ class CreateAndShareController extends Controller
 
 		}
 
+		$urlChat = $this->get('router')->generate(
+            	'pw_main_chat', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$urlFiles = $this->get('router')->generate(
+            	'pw_main_files', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$urlProject = $this->get('router')->generate(
+            	'pw_main_project', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$sections = ['chat' => $urlChat, 'files' => $urlFiles, 'project' => $urlProject];
+
+
 
 
 		return $this->render('PWMainBundle:Default:fichiers.html.twig',
 			array(
 				'form' => $form->createView(),
-				'listdocs' => $docsinf,
-				'arraygrp' => $arraygrp
+				'listdocs' => array_reverse($docsinf),
+				'arraygrp' => $arraygrp,
+				'sections' => $sections
 			)
 
 		);
 
 	}
+
+
+
 
 
 
@@ -296,7 +334,7 @@ class CreateAndShareController extends Controller
 		;
 
 		$doc = $repository->find($id);
-		$file = $doc->getAbsolutePath();
+		$file = $doc->getWebPath();
 
 		$response = new BinaryFileResponse($file);
 		$response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT);

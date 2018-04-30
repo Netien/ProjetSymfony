@@ -53,13 +53,22 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
             <div class=\"d-flex p-2 justify-content-around \" style=\"min-width:75%\">
               
               <div class=\"p-3\">
-                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Chat</a></p>
+                <p><a href=";
+        // line 29
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["sections"] ?? $this->getContext($context, "sections")), "chat", array()), "html", null, true);
+        echo " class=\"btn btn-primary\" style=\"min-width:10%\">Chat</a></p>
               </div>
               <div class=\"p-3\">
-                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Fichiers Partages</a></p>
+                <p><a href=\"";
+        // line 32
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["sections"] ?? $this->getContext($context, "sections")), "files", array()), "html", null, true);
+        echo "\" class=\"btn btn-primary\" style=\"min-width:10%\">Fichiers Partages</a></p>
               </div>
               <div class=\"p-3\">
-                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Projet</a></p>
+                <p><a href=\"";
+        // line 35
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["sections"] ?? $this->getContext($context, "sections")), "project", array()), "html", null, true);
+        echo "\" class=\"btn btn-primary\" style=\"min-width:10%\">Projet</a></p>
               </div>
             </div>
           </div>
@@ -199,7 +208,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 
     public function getDebugInfo()
     {
-        return array (  181 => 69,  172 => 68,  159 => 8,  150 => 7,  120 => 70,  118 => 68,  106 => 58,  99 => 56,  90 => 52,  86 => 51,  83 => 50,  78 => 49,  37 => 10,  35 => 7,  27 => 1,);
+        return array (  190 => 69,  181 => 68,  168 => 8,  159 => 7,  129 => 70,  127 => 68,  115 => 58,  108 => 56,  99 => 52,  95 => 51,  92 => 50,  87 => 49,  70 => 35,  64 => 32,  58 => 29,  37 => 10,  35 => 7,  27 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -240,13 +249,13 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
             <div class=\"d-flex p-2 justify-content-around \" style=\"min-width:75%\">
               
               <div class=\"p-3\">
-                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Chat</a></p>
+                <p><a href={{sections.chat}} class=\"btn btn-primary\" style=\"min-width:10%\">Chat</a></p>
               </div>
               <div class=\"p-3\">
-                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Fichiers Partages</a></p>
+                <p><a href=\"{{sections.files}}\" class=\"btn btn-primary\" style=\"min-width:10%\">Fichiers Partages</a></p>
               </div>
               <div class=\"p-3\">
-                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Projet</a></p>
+                <p><a href=\"{{sections.project}}\" class=\"btn btn-primary\" style=\"min-width:10%\">Projet</a></p>
               </div>
             </div>
           </div>

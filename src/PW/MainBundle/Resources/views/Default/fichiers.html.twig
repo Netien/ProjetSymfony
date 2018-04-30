@@ -10,9 +10,8 @@
 
     <input type="submit" value="Upload Document" />
 </form>
-
+<br/>
 <h2>fichiers actuels : </h2>
-
 {% for doc in listdocs %}
   <li>
     <a class="nav-link active" href={{doc.url}}>
