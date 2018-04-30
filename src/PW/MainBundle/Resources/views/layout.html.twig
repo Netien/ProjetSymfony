@@ -21,10 +21,10 @@
 
           <div class="container-fluid " style="float:left">
             <div style="position:absolute;left:20px;width:100px" class="col" >
-              <a class="navbar-brand" href="#">CreateAndShare</a>
+              <a class="navbar-brand" href="/Symfony/web/app_dev.php/home">CreateAndShare</a>
             </div>
             <div class="d-flex p-2 justify-content-around " style="min-width:75%">
-              
+              {% if arraygrp is not empty %}
               <div class="p-3">
                 <p><a href={{sections.chat}} class="btn btn-primary" style="min-width:10%">Chat</a></p>
               </div>
@@ -34,6 +34,7 @@
               <div class="p-3">
                 <p><a href="{{sections.project}}" class="btn btn-primary" style="min-width:10%">Projet</a></p>
               </div>
+              {% endif %}
             </div>
           </div>
         </nav>

@@ -18,6 +18,7 @@ use Symfony\Component\Form;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use PW\MainBundle\Entity\Message;
 use PW\MainBundle\Entity\Document;
+use PW\MainBundle\Entity\Groupe;
 
 
 class CreateAndShareController extends Controller
@@ -35,7 +36,7 @@ class CreateAndShareController extends Controller
 		->getRepository('PWMainBundle:Groupe')
 		;
 
-		$listGroupes = $repository->findAll();
+		$listGroupes = $user->getGroups();
 
 		$arraygrp = [];
 
@@ -55,7 +56,9 @@ class CreateAndShareController extends Controller
 			);
 
 		}
-
+		if(empty($arraygrp)==true){
+					return $this->render('PWMainBundle:Default:index.html.twig',array('name' =>$user->getUsername(),'arraygrp' => $arraygrp));
+		}
 		$urlChat = $this->get('router')->generate(
             	'pw_main_chat', // 1er argument : le nom de la route
             	array('idg' => $id));
@@ -76,21 +79,179 @@ class CreateAndShareController extends Controller
 	}
 
 
-	public function authAction()
+
+	public function profileAction()
 	{
-		
+
+		$user = $this->getUser();
+		$listGroupes = $user->getGroups();
+
+		$arraygrp = []; 
+
+		foreach ($listGroupes as $group) 
+		{
+	 		$id = $group->getId();
+	  		$arraygrp[] = array(
+    			'id' => $group->getId(),
+    			'titre' => $group->getTitre()
+    		);
+	  	}
+	  		
+
+		if(empty($arraygrp)==true){
+					return $this->render('PWMainBundle:Default:profile.html.twig',array('username' =>$user->getUsername(),'password'=>$user->getPassword(),'mail'=>$user->getEmail(),'arraygrp'=>$arraygrp));
+		}
+				$urlChat = $this->get('router')->generate(
+            	'pw_main_chat', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$urlFiles = $this->get('router')->generate(
+            	'pw_main_files', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$urlProject = $this->get('router')->generate(
+            	'pw_main_project', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+
+		$sections = ['chat' => $urlChat, 'files' => $urlFiles, 'project' => $urlProject];
+
+				return $this->render('PWMainBundle:Default:profile.html.twig',array('username' =>$user->getUsername(),'password'=>$user->getPassword(),'mail'=>$user->getEmail(), 'arraygrp' => $arraygrp, 'sections' => $sections,'arraygrp'=>$arraygrp));
 	}
 
 
 
 
 
+	public function editProfileAction(Request $request)
+	{
+		$user = $this->getUser();
+
+		$listGroupes = $user->getGroups();
+
+		$arraygrp = []; 
+
+		foreach ($listGroupes as $group) 
+		{
+	 		$id = $group->getId();
+	  		$arraygrp[] = array(
+    			'id' => $group->getId(),
+    			'titre' => $group->getTitre()
+    		);
+	  		
+		}
+
+		$user1 = new User();
+		    $formbuilder = $this->get('form.factory')->createBuilder(FormType::class, $user);
+	 $formbuilder
+      ->add('username',  TextType::class)
+      ->add('password',  TextType::class)
+      ->add('email',  EmailType::class)
+      ->add('save', SubmitType::class)
+      ->getForm();
+
+	   $user1->setRoles(array('ROLE_USER'));
+      $user1->setSalt('');
+
+    $form = $formbuilder->getForm();
+     $form = $formbuilder->getForm();
+
+    if($request->isMethod('POST')){
+
+      $form->handleRequest($request);
+
+      if($form->isValid()){
+        
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
+        $request->getSession()->getFlashbag()->add('notice', 'User bien crée');
+
+        return $this->redirectToRoute('pw_user_homepage');
+      }
+
+}
+	return $this->render('PWMainBundle:CreateAndShare:editProfile',array(
+      'form' => $form->createView(),'name' =>$user->getUsername(), 'arraygrp' => $arraygrp));
+}
 
 
 
+	public function creategrpAction(Request $request)
+	{
+
+	$user = $this->getUser();
+
+		$listGroupes = $user->getGroups();
+
+		$arraygrp = []; 
+
+		foreach ($listGroupes as $group) 
+		{
+	 		$id = $group->getId();
+	  		$arraygrp[] = array(
+    			'id' => $group->getId(),
+    			'titre' => $group->getTitre()
+    		);
+	  		
+		}
+
+			$groupe = new Groupe();
+		$formbuilder = $this->get('form.factory')->createBuilder(FormType::class, $groupe);
+
+		$formbuilder
+			->add('titre',	TextType::class)
+			->add('description',	TextType::class)
+			->add('save',	SubmitType::class)
+			->getForm();
 
 
+		$form = $formbuilder->getForm();
 
+
+		if($request->isMethod('POST')){
+
+			$form->handleRequest($request);
+			$nom= $user->getUsername();
+			$groupe->setPseudoLeader($nom);
+			$groupe->addUser($user);
+			$user->addGroup($groupe);
+
+			if($form->isValid()){
+				
+				$em = $this->getDoctrine()->getManager();
+				$em->persist($groupe);
+				$em->flush();
+
+				$request->getSession()->getFlashbag()->add('notice', 'Groupe bien crée');
+
+				return $this->redirectToRoute('pw_main_homepage');
+			}
+		}
+
+				if(empty($arraygrp)==true){
+					return $this->render('PWMainBundle:Default:addGroupe.html.twig',array('name' =>$user->getUsername(),'arraygrp' => $arraygrp,'form'=>$form->createView()));
+		}
+				$urlChat = $this->get('router')->generate(
+            	'pw_main_chat', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$urlFiles = $this->get('router')->generate(
+            	'pw_main_files', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+		$urlProject = $this->get('router')->generate(
+            	'pw_main_project', // 1er argument : le nom de la route
+            	array('idg' => $id));
+
+
+		$sections = ['chat' => $urlChat, 'files' => $urlFiles, 'project' => $urlProject];
+
+				return $this->render('PWMainBundle:Default:addGroupe.html.twig',array('name' =>$user->getUsername(), 'arraygrp' => $arraygrp, 'sections' => $sections, $form->createView() ));
+	}
+
+	
 
 	public function chatAction($idg, Request $request)
 
@@ -117,7 +278,7 @@ class CreateAndShareController extends Controller
 		$repository = $em->getRepository('PWMainBundle:Groupe')
 		;
 
-		$listGroupes = $repository->findAll();
+		$listGroupes = $user->getGroups();
 
 		$arraygrp = [];
 
@@ -264,7 +425,7 @@ class CreateAndShareController extends Controller
 		}
 
 		$arraygrp = [];
-		$listGroupes = $repository->findAll();
+		$listGroupes = $user->getGroups();
 
 		foreach ($listGroupes as $group) 
 		{
@@ -282,7 +443,7 @@ class CreateAndShareController extends Controller
 		}
 
 
-		$currGroup = $repository->find($idg);
+		$currGroup = $user->getGroups();
 
 
 		$documentsRepository = $em->getRepository('PWMainBundle:Document');
@@ -301,6 +462,9 @@ class CreateAndShareController extends Controller
 				'url' => $url
 			);
 
+		}
+			if(empty($arraygrp)==true){
+					return $this->render('PWMainBundle:Default:index.html.twig',array('name' =>$user->getUsername(),'arraygrp' => $arraygrp));
 		}
 
 		$urlChat = $this->get('router')->generate(

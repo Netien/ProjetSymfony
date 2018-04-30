@@ -2,17 +2,26 @@
 
 {% block body %}
 
-	<div class="centered">
-	<h3>Votre profile</h3>
+	<h3>Formulaire de création de groupe</h3>
 
-	<ul>
-	<li>Votre Pseudonyme : {{username}}</li>
-	<li>Votre Mot de passe : {{password}}</li>
-	<li>Votre adresse Mail : {{mail}} </li>
-	</ul>
+	<div class="well">
+		{{form_start(form,{'attr':{'class': 'form-horizontal'}})}}
 
-	<p>Voulez-vous modifier vos renseignements ?<p>
-	<a class="btn btn-primary" href="/Symfony/web/app_dev.php/profile_edit">Modifier votre profil</a>
+		{{form_errors(form)}}
+
+		<div class="form-group">
+
+		{{form_label(form.titre,"Nom du groupe",{'label_attr': {'class':'col-sm-2 control-label'}})}}
+		{{form_widget(form.titre,{'attr': {'class' : 'form-control'}})}}
+
+		{{form_label(form.description,"Description du groupe",{'label_attr': {'class':'col-sm-2 control-label'}})}}
+		{{form_widget(form.description,{'attr': {'class' : 'form-control'}})}}
+
+		 {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+		{{form_rest(form)}}
+
+		{{form_end(form)}}
+
 	</div>
 
 {% endblock %}
