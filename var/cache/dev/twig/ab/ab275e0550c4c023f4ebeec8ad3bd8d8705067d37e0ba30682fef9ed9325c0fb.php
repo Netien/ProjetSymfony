@@ -134,26 +134,6 @@ class __TwigTemplate_f1b379d77e0bd6fc20d13df5b0521ea2a30f4435efab5387f0988547a49
 
 {% block body %}
 
-<<<<<<< HEAD:var/cache/dev/twig/ea/ea4baec6898eb6e3bd0fba9a4a1ad85809f1142aa6610d5f9e73f73ca5e22d8c.php
-  {% if error %}
-    <div class=\"alert alert-danger\">{{ error.message }}</div>
-  {% endif %}
-
-  <form action=\"{{ path('login_check') }}\" method=\"post\">
-    <label for=\"username\">Login :</label>
-    <br/>
-    <input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" />
-    <br/>
-    <label for=\"password\">Mot de passe :</label>
-    <br/>
-    <input type=\"password\" id=\"password\" name=\"_password\" />
-    <br />
-    <input type=\"submit\" value=\"Connexion\" />
-  </form>
-
-{% endblock %}
-", "PWUserBundle:Security:login.html.twig", "/Users/rrtaya/Site Symfony/Symfony/src/PW/UserBundle/Resources/views/Security/login.html.twig");
-=======
 <h1 class =\"mytitle\">Fichiers partagés du groupe:</h1>
 
 <h2>soumettre nouveau : </h2>
@@ -177,6 +157,5 @@ class __TwigTemplate_f1b379d77e0bd6fc20d13df5b0521ea2a30f4435efab5387f0988547a49
 
 
 {% endblock %}", "PWMainBundle:Default:fichiers.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/src/PW/MainBundle/Resources/views/Default/fichiers.html.twig");
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9:var/cache/dev/twig/ab/ab275e0550c4c023f4ebeec8ad3bd8d8705067d37e0ba30682fef9ed9325c0fb.php
     }
 }

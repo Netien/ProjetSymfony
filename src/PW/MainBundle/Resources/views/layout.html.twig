@@ -2,42 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8" />
-<<<<<<< HEAD
-           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/layout.css">
-=======
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         {% block stylesheets %}
             <link href="{{ asset('layout.css') }}" rel="stylesheet" />
         {% endblock %}
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
          <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
         <title>Autentification Create&amp;Share</title>
     </head>
 
     <body>
       <div class="container" style="height:100%;width:100%;overflow:scroll">
       <div class="container">
-        <div class="row">
         <nav class="navbar navbar-default">
-<<<<<<< HEAD
-            <div class="navbar-header">
-              <a class="navbar-brand " href="#">CreateAndShare</a>
-            </div>
-            <div class="navbar col-sm-8" id="navbar">
-              <ul class="list-inline">
-                <li class="list-inline-item"><a href="/Fichier">Fichier</a></li>
-                <li class="list-inline-item"><a href="">Chat</a></li>
-                <li class="list-inline-item"><a href="/Symfony/web/app_dev.php/profile">Profile</a>
-              </ul>
-            </div>
-            <div class="navbar col-sm w-25 p-3" id="navbar">
-              <a href="/Symfony/web/app_dev.php/logout">Logout</a>
-              </div>
-              </nav>
-=======
 
           <div class="container-fluid " style="float:left">
             <div style="position:absolute;left:20px;width:100px" class="col" >
@@ -55,9 +35,8 @@
                 <p><a href="{{sections.project}}" class="btn btn-primary" style="min-width:10%">Projet</a></p>
               </div>
             </div>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
           </div>
-      </div>
+        </nav>
 
 
     <div class="container-fluid" >
@@ -66,10 +45,6 @@
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-<<<<<<< HEAD
-              <ul>
-=======
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
 
               {% for groupe in arraygrp %}
                 <li class="nav-item">
@@ -83,33 +58,30 @@
             </ul>
           </div>
         </nav>
-<<<<<<< HEAD
-=======
     <div class="col-xl" >
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
           </div>
         
 
-    	{% block body %}
-    	{% endblock %}
+      {% block body %}
+      {% endblock %}
       </main>
       </div>
-    	<footer>
-    	
-    	</footer>
-</div>
-<<<<<<< HEAD
-=======
+      <footer>
+      
+      </footer>
 </div>
 </div>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
+</div>
     </body>
-    <script src="/js/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </html>
-
-
-    

@@ -174,7 +174,6 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
-      <parameter>bootstrap_3_layout.html.twig</parameter>
     </parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
     <parameter key="monolog.swift_mailer.handlers" type="collection"/>
@@ -617,13 +616,8 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-<<<<<<< HEAD
-      <argument>GFWFGrtkMuFsEsvR-LvivW</argument>
-      <argument>/Users/rrtaya/Site Symfony/Symfony/var/cache/dev/pools</argument>
-=======
       <argument>axcZhOeoGWB-roGAciC0P1</argument>
       <argument>/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/var/cache/dev/pools</argument>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -632,11 +626,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-<<<<<<< HEAD
-      <argument>GFWFGrtkMuFsEsvR-LvivW</argument>
-=======
       <argument>axcZhOeoGWB-roGAciC0P1</argument>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2316,20 +2306,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-<<<<<<< HEAD
-      <argument>5ae66d8e69cab2.28066447</argument>
-=======
       <argument>5ae64f24176055.74239430</argument>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-<<<<<<< HEAD
-      <argument>5ae66d8e69cab2.28066447</argument>
-=======
       <argument>5ae64f24176055.74239430</argument>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2374,11 +2356,10 @@
       <argument type="collection">
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
+        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="form_themes" type="collection">
           <argument>form_div_layout.html.twig</argument>
-          <argument>bootstrap_3_layout.html.twig</argument>
         </argument>
-        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="autoescape">name</argument>
         <argument key="cache">/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
@@ -2629,7 +2610,6 @@
     <service id="twig.form.engine" class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
       <argument type="collection">
         <argument>form_div_layout.html.twig</argument>
-        <argument>bootstrap_3_layout.html.twig</argument>
       </argument>
       <argument type="service" id="twig"/>
     </service>
@@ -3610,52 +3590,32 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>npj3Tjr1qi</argument>
       <argument>0</argument>
-<<<<<<< HEAD
-      <argument>GFWFGrtkMuFsEsvR-LvivW</argument>
-      <argument>/Users/rrtaya/Site Symfony/Symfony/var/cache/dev/pools</argument>
-=======
       <argument>axcZhOeoGWB-roGAciC0P1</argument>
       <argument>/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/var/cache/dev/pools</argument>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>-e0Am2nFfs</argument>
       <argument>0</argument>
-<<<<<<< HEAD
-      <argument>GFWFGrtkMuFsEsvR-LvivW</argument>
-      <argument>/Users/rrtaya/Site Symfony/Symfony/var/cache/dev/pools</argument>
-=======
       <argument>axcZhOeoGWB-roGAciC0P1</argument>
       <argument>/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/var/cache/dev/pools</argument>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>+CuLqgLcAj</argument>
       <argument>0</argument>
-<<<<<<< HEAD
-      <argument>GFWFGrtkMuFsEsvR-LvivW</argument>
-      <argument>/Users/rrtaya/Site Symfony/Symfony/var/cache/dev/pools</argument>
-=======
       <argument>axcZhOeoGWB-roGAciC0P1</argument>
       <argument>/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/var/cache/dev/pools</argument>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>x67wmR+XCn</argument>
       <argument>0</argument>
-<<<<<<< HEAD
-      <argument>GFWFGrtkMuFsEsvR-LvivW</argument>
-      <argument>/Users/rrtaya/Site Symfony/Symfony/var/cache/dev/pools</argument>
-=======
       <argument>axcZhOeoGWB-roGAciC0P1</argument>
       <argument>/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/var/cache/dev/pools</argument>
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>

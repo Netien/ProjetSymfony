@@ -16,7 +16,7 @@ class User implements UserInterface
 {
 
    /**
-    * @ORM\ManyToMany(targetEntity="PW\MainBundle\Entity\Groupe", inversedBy="users")
+    * @ORM\ManyToMany(targetEntity="PW\MainBundle\Entity\Groupe")
     */
     private $groups;
 
@@ -200,58 +200,5 @@ class User implements UserInterface
 
   }
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->groups = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add group
-     *
-     * @param \PW\MainBundle\Entity\Groupe $group
-     *
-     * @return User
-     */
-    public function addGroup(\PW\MainBundle\Entity\Groupe $group)
-    {
-        $this->groups[] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Remove group
-     *
-     * @param \PW\MainBundle\Entity\Groupe $group
-     */
-    public function removeGroup(\PW\MainBundle\Entity\Groupe $group)
-    {
-        $this->groups->removeElement($group);
-    }
-
-    /**
-     * Get groups
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getGroups()
-    {
-        
-        return $this->groups;
-    }
-
-    public function isInGroup(int $id)
-    {
-        $groupList = $this->groups;
-        $ids = [];
-        foreach ($groupList as $group) {
-            $ids[] = $group->getId();
-        }
-        return in_array($id, $ids);
-    }
-
-
 }
+

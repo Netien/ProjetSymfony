@@ -95,9 +95,6 @@ class __TwigTemplate_f824e737d7090110be0b99f38f61d4906d073e01879f6ac7ad329005256
         // line 24
         echo "
 
-<p> <a href=\"/Symfony/web/app_dev.php/group/create\">Créer un groupe</a>
-
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -132,13 +129,7 @@ class __TwigTemplate_f824e737d7090110be0b99f38f61d4906d073e01879f6ac7ad329005256
 
     public function getSourceContext()
     {
-<<<<<<< HEAD:var/cache/dev/twig/16/16dbebfbf74f257d7136671ad3176ca18e2236d13dc76c8ecdecf11072fd9919.php
-        return new Twig_Source("
-
-{% extends \"PWMainBundle::layout.html.twig\" %}
-=======
         return new Twig_Source("{% extends \"PWMainBundle::layout.html.twig\" %}
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9:var/cache/dev/twig/c1/c131bfd8b3776a4885e52f58f2eb4551bc54548d2ddd5d7fc20064564e5ded2a.php
 
 {% block body %}
 
@@ -163,14 +154,6 @@ class __TwigTemplate_f824e737d7090110be0b99f38f61d4906d073e01879f6ac7ad329005256
 {% endfor %}
 
 
-<<<<<<< HEAD:var/cache/dev/twig/16/16dbebfbf74f257d7136671ad3176ca18e2236d13dc76c8ecdecf11072fd9919.php
-<p> <a href=\"/Symfony/web/app_dev.php/group/create\">Créer un groupe</a>
-
-
-{% endblock %}
-", "PWMainBundle:Default:index.html.twig", "/Users/rrtaya/Site Symfony/Symfony/src/PW/MainBundle/Resources/views/Default/index.html.twig");
-=======
 {% endblock %}", "PWMainBundle:Default:fichiers.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/src/PW/MainBundle/Resources/views/Default/fichiers.html.twig");
->>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9:var/cache/dev/twig/c1/c131bfd8b3776a4885e52f58f2eb4551bc54548d2ddd5d7fc20064564e5ded2a.php
     }
 }
