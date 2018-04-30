@@ -13,12 +13,14 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use PW\MainBundle\Entity\Message;
 use PW\MainBundle\Entity\Document;
 use PW\MainBundle\Entity\Groupe;
+use PW\UserBundle\Entity\User;
 
 
 class CreateAndShareController extends Controller
@@ -168,13 +170,31 @@ class CreateAndShareController extends Controller
 
         $request->getSession()->getFlashbag()->add('notice', 'User bien crée');
 
-        return $this->redirectToRoute('pw_user_homepage');
+        return $this->redirectToRoute('pw_main_homepage');
       }
 
 }
-	return $this->render('PWMainBundle:CreateAndShare:editProfile',array(
+	return $this->render('PWMainBundle:Default:editProfile.html.twig',array(
       'form' => $form->createView(),'name' =>$user->getUsername(), 'arraygrp' => $arraygrp));
 }
+
+	public function rejoindreAction(Request $request){
+		$user = $this->getUser();
+
+		$listGroupes = $user->getGroups();
+
+		$arraygrp = []; 
+
+		foreach ($listGroupes as $group) 
+		{
+	 		$id = $group->getId();
+	  		$arraygrp[] = array(
+    			'id' => $group->getId(),
+    			'titre' => $group->getTitre()
+    		);
+	  		
+		}
+	}
 
 
 
@@ -213,9 +233,8 @@ class CreateAndShareController extends Controller
 		if($request->isMethod('POST')){
 
 			$form->handleRequest($request);
-			$nom= $user->getUsername();
+			$nom = $user->getUsername();
 			$groupe->setPseudoLeader($nom);
-			$groupe->addUser($user);
 			$user->addGroup($groupe);
 
 			if($form->isValid()){
@@ -229,7 +248,6 @@ class CreateAndShareController extends Controller
 				return $this->redirectToRoute('pw_main_homepage');
 			}
 		}
-
 				if(empty($arraygrp)==true){
 					return $this->render('PWMainBundle:Default:addGroupe.html.twig',array('name' =>$user->getUsername(),'arraygrp' => $arraygrp,'form'=>$form->createView()));
 		}
@@ -249,15 +267,13 @@ class CreateAndShareController extends Controller
 		$sections = ['chat' => $urlChat, 'files' => $urlFiles, 'project' => $urlProject];
 
 				return $this->render('PWMainBundle:Default:addGroupe.html.twig',array('name' =>$user->getUsername(), 'arraygrp' => $arraygrp, 'sections' => $sections, $form->createView() ));
-	}
-
+}
 	
 
 	public function chatAction($idg, Request $request)
-
-
 	{
 
+		$user= $this->getUser();
 		$em = $this->getDoctrine()->getManager();
 
 
@@ -394,6 +410,7 @@ class CreateAndShareController extends Controller
 
 	public function filesAction($idg, Request $request)
 	{
+		$user= $this->getUser();
 		$document = new Document();
 		$form = $this->createFormBuilder($document)
 		->add('name')
@@ -425,7 +442,7 @@ class CreateAndShareController extends Controller
 		}
 
 		$arraygrp = [];
-		$listGroupes = $user->getGroups();
+		$listGroupes = $repository->findAll();
 
 		foreach ($listGroupes as $group) 
 		{

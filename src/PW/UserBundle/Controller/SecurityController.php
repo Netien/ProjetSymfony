@@ -62,7 +62,7 @@ class SecurityController extends Controller
 
         $request->getSession()->getFlashbag()->add('notice', 'User bien crée');
 
-        return $this->redirectToRoute('pw_user_homepage');
+        return $this->redirectToRoute('login');
       }
     }
 

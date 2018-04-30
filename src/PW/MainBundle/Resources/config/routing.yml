@@ -21,7 +21,7 @@ pw_main_profile:
     path:   /profile
     defaults: { _controller:PWMainBundle:CreateAndShare:profile}
 
-pw_main_editporofile:
+pw_main_editprofile:
     path:   /profile_edit
     defaults:   { _controller:PWMainBundle:CreateAndShare:editProfile}
 
