@@ -1232,6 +1232,6 @@ class __TwigTemplate_cbeb74dd54d1ec0af33ea5356871e5f7efc95f63507fc30d210731d538d
         display: none;
     }
 }
-", "@WebProfiler/Profiler/toolbar.css.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar.css.twig");
+", "@WebProfiler/Profiler/toolbar.css.twig", "/Users/rrtaya/Site Symfony/Symfony/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar.css.twig");
     }
 }

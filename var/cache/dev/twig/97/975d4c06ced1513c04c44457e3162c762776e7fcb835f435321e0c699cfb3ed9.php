@@ -27,37 +27,33 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 <html>
     <head>
         <meta charset=\"utf-8\" />
-        <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css\" integrity=\"sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4\" crossorigin=\"anonymous\">
-        <link rel=\"stylesheet\" href=\"/css/layout.css\">
+           <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">
+        <link rel=\"stylesheet\" href=\"css/layout.css\">
          <meta charset=\"utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
-
-
         <title>Autentification Create&amp;Share</title>
     </head>
 
     <body>
       <div class=\"container\">
+        <div class=\"row\">
         <nav class=\"navbar navbar-default\">
-
-          <div class=\"container-fluid\">
             <div class=\"navbar-header\">
-              <a class=\"navbar-brand\" href=\"#\">CreateAndShare</a>
+              <a class=\"navbar-brand \" href=\"#\">CreateAndShare</a>
             </div>
             <div class=\"navbar col-sm-8\" id=\"navbar\">
               <ul class=\"list-inline\">
-                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
-                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
+                <li class=\"list-inline-item\"><a href=\"/Fichier\">Fichier</a></li>
+                <li class=\"list-inline-item\"><a href=\"\">Chat</a></li>
+                <li class=\"list-inline-item\"><a href=\"/Symfony/web/app_dev.php/profile\">Profile</a>
               </ul>
             </div>
             <div class=\"navbar col-sm w-25 p-3\" id=\"navbar\">
-              <ul class=\"nav navbar-nav d-flex justify-content-end\">
-                <li>fnzuofz</li>
-              </ul>
-            </div>
+              <a href=\"/Symfony/web/app_dev.php/logout\">Logout</a>
+              </div>
+              </nav>
           </div>
-        </nav>
+      </div>
 
 
     <div class=\"container-fluid\">
@@ -66,46 +62,41 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         <nav class=\"col-md-2 d-none d-md-block bg-light sidebar\">
           <div class=\"sidebar-sticky\">
             <ul class=\"nav flex-column\">
-              <li class=\"nav-item\">
-                <a class=\"nav-link active\" href=\"#\">
-                  <span data-feather=\"home\"></span>
-                  Dashboard <span class=\"sr-only\">(current)</span>
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file\"></span>
-                  Orders
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"shopping-cart\"></span>
-                  Products
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"users\"></span>
-                  Customers
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"bar-chart-2\"></span>
-                  Reports
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"layers\"></span>
-                  Integrations
-                </a>
-              </li>
-            </ul>
+              <ul>
+
+              ";
+        // line 42
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["arraygrp"] ?? $this->getContext($context, "arraygrp")));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["groupe"]) {
+            // line 43
+            echo "                <li class=\"nav-item\">
+                  <a class=\"nav-link active\" href=\"/group/";
+            // line 44
+            echo twig_escape_filter($this->env, $this->getAttribute($context["groupe"], "id", array()), "html", null, true);
+            echo "/chat\">
+                    ";
+            // line 45
+            echo twig_escape_filter($this->env, $this->getAttribute($context["groupe"], "titre", array()), "html", null, true);
+            echo "
+                  </a>
+                </li>
+              ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 49
+            echo "                <li>Pas de groupe trouve</li>
+              ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['groupe'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 51
+        echo "            </ul>
           </div>
         </nav>
-    <div class=\"col-xl\">
         <main role=\"main\" class=\"col-md-9 ml-sm-auto col-lg-10 px-4\">
           <div class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">
             <h1 class=\"h2\">Dashboard</h1>
@@ -113,25 +104,18 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         
 
     \t";
-        // line 90
+        // line 60
         $this->displayBlock('body', $context, $blocks);
-        // line 92
+        // line 62
         echo "      </main>
       </div>
     \t<footer>
     \t
     \t</footer>
 </div>
-</div>
     </body>
-    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
-<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\" integrity=\"sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ\" crossorigin=\"anonymous\"></script>
-<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js\" integrity=\"sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm\" crossorigin=\"anonymous\"></script>
-    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>
-    <script>window.jQuery || document.write('<script src=\"../../assets/js/vendor/jquery.min.js\"><\\/script>')</script>
-    <script src=\"../../dist/js/bootstrap.min.js\"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src=\"../../assets/js/ie10-viewport-bug-workaround.js\"></script>
+    <script src=\"/js/jquery.js\"></script>
+<script src=\"/js/bootstrap.min.js\"></script>
 </html>
 
 
@@ -144,7 +128,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 
     }
 
-    // line 90
+    // line 60
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -153,7 +137,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 91
+        // line 61
         echo "    \t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -168,9 +152,14 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         return "PWMainBundle::layout.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  157 => 91,  148 => 90,  119 => 92,  117 => 90,  26 => 1,);
+        return array (  141 => 61,  132 => 60,  110 => 62,  108 => 60,  97 => 51,  90 => 49,  81 => 45,  77 => 44,  74 => 43,  69 => 42,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -187,37 +176,33 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 <html>
     <head>
         <meta charset=\"utf-8\" />
-        <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css\" integrity=\"sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4\" crossorigin=\"anonymous\">
-        <link rel=\"stylesheet\" href=\"/css/layout.css\">
+           <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">
+        <link rel=\"stylesheet\" href=\"css/layout.css\">
          <meta charset=\"utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
-
-
         <title>Autentification Create&amp;Share</title>
     </head>
 
     <body>
       <div class=\"container\">
+        <div class=\"row\">
         <nav class=\"navbar navbar-default\">
-
-          <div class=\"container-fluid\">
             <div class=\"navbar-header\">
-              <a class=\"navbar-brand\" href=\"#\">CreateAndShare</a>
+              <a class=\"navbar-brand \" href=\"#\">CreateAndShare</a>
             </div>
             <div class=\"navbar col-sm-8\" id=\"navbar\">
               <ul class=\"list-inline\">
-                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
-                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
+                <li class=\"list-inline-item\"><a href=\"/Fichier\">Fichier</a></li>
+                <li class=\"list-inline-item\"><a href=\"\">Chat</a></li>
+                <li class=\"list-inline-item\"><a href=\"/Symfony/web/app_dev.php/profile\">Profile</a>
               </ul>
             </div>
             <div class=\"navbar col-sm w-25 p-3\" id=\"navbar\">
-              <ul class=\"nav navbar-nav d-flex justify-content-end\">
-                <li>fnzuofz</li>
-              </ul>
-            </div>
+              <a href=\"/Symfony/web/app_dev.php/logout\">Logout</a>
+              </div>
+              </nav>
           </div>
-        </nav>
+      </div>
 
 
     <div class=\"container-fluid\">
@@ -226,46 +211,20 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         <nav class=\"col-md-2 d-none d-md-block bg-light sidebar\">
           <div class=\"sidebar-sticky\">
             <ul class=\"nav flex-column\">
-              <li class=\"nav-item\">
-                <a class=\"nav-link active\" href=\"#\">
-                  <span data-feather=\"home\"></span>
-                  Dashboard <span class=\"sr-only\">(current)</span>
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"file\"></span>
-                  Orders
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"shopping-cart\"></span>
-                  Products
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"users\"></span>
-                  Customers
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"bar-chart-2\"></span>
-                  Reports
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  <span data-feather=\"layers\"></span>
-                  Integrations
-                </a>
-              </li>
+              <ul>
+
+              {% for groupe in arraygrp %}
+                <li class=\"nav-item\">
+                  <a class=\"nav-link active\" href=\"/group/{{groupe.id}}/chat\">
+                    {{ groupe.titre }}
+                  </a>
+                </li>
+              {% else %}
+                <li>Pas de groupe trouve</li>
+              {% endfor %}
             </ul>
           </div>
         </nav>
-    <div class=\"col-xl\">
         <main role=\"main\" class=\"col-md-9 ml-sm-auto col-lg-10 px-4\">
           <div class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">
             <h1 class=\"h2\">Dashboard</h1>
@@ -280,16 +239,9 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
     \t
     \t</footer>
 </div>
-</div>
     </body>
-    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
-<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\" integrity=\"sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ\" crossorigin=\"anonymous\"></script>
-<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js\" integrity=\"sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm\" crossorigin=\"anonymous\"></script>
-    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>
-    <script>window.jQuery || document.write('<script src=\"../../assets/js/vendor/jquery.min.js\"><\\/script>')</script>
-    <script src=\"../../dist/js/bootstrap.min.js\"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src=\"../../assets/js/ie10-viewport-bug-workaround.js\"></script>
+    <script src=\"/js/jquery.js\"></script>
+<script src=\"/js/bootstrap.min.js\"></script>
 </html>
 
 

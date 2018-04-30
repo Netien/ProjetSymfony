@@ -128,10 +128,23 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // pw_main_create_profile
         if ('/signup' === $pathinfo) {
-            return array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::signupAction',  '_route' => 'pw_main_create_profile',);
+            return array (  '_controller' => 'PW\\UserBundle\\Controller\\SecurityController::signupAction',  '_route' => 'pw_main_create_profile',);
         }
 
-        if (0 === strpos($pathinfo, '/group')) {
+        if (0 === strpos($pathinfo, '/profile')) {
+            // pw_main_profile
+            if ('/profile' === $pathinfo) {
+                return array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::profileAction',  '_route' => 'pw_main_profile',);
+            }
+
+            // pw_main_editporofile
+            if ('/profile_edit' === $pathinfo) {
+                return array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::editProfileAction',  '_route' => 'pw_main_editporofile',);
+            }
+
+        }
+
+        elseif (0 === strpos($pathinfo, '/group')) {
             // pw_main_create_group
             if ('/group/create' === $pathinfo) {
                 return array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::creategrpAction',  '_route' => 'pw_main_create_group',);

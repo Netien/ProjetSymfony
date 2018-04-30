@@ -141,6 +141,6 @@ class __TwigTemplate_fd0062fab1e9d362b71391cb9655e6efda4d450836c29b7e8367811c664
     {{ filename|file_excerpt(line, -1) }}
 </div>
 {% endblock %}
-", "@WebProfiler/Profiler/open.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/open.html.twig");
+", "@WebProfiler/Profiler/open.html.twig", "/Users/rrtaya/Site Symfony/Symfony/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/open.html.twig");
     }
 }

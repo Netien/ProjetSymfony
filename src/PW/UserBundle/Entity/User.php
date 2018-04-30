@@ -16,7 +16,7 @@ class User implements UserInterface
 {
 
    /**
-    * @ORM\ManyToMany(targetEntity="PW\MainBundle\Entity\Groupe", inversedBy="users")
+    * @ORM\ManyToMany(targetEntity="PW\MainBundle\Entity\Groupe", inversedBy="users", cascade={"persist"})
     */
     private $groups;
 
@@ -239,6 +239,7 @@ class User implements UserInterface
      */
     public function getGroups()
     {
+        
         return $this->groups;
     }
 

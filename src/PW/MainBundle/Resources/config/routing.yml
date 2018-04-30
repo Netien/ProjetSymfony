@@ -15,7 +15,15 @@ logout:
 
 pw_main_create_profile:
     path:      /signup
-    defaults: { _controller: PWMainBundle:CreateAndShare:signup }
+    defaults: { _controller: PWUserBundle:Security:signup }
+
+pw_main_profile:
+    path:   /profile
+    defaults: { _controller:PWMainBundle:CreateAndShare:profile}
+
+pw_main_editporofile:
+    path:   /profile_edit
+    defaults:   { _controller:PWMainBundle:CreateAndShare:editProfile}
 
 pw_main_create_group:
     path:      /group/create

@@ -935,6 +935,6 @@ class __TwigTemplate_f46c3bf992252d0ad2fa23c42bf1329b5183ab10fa40c2d63c72f060891
         </table>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/Users/rrtaya/Site Symfony/Symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views/Collector/security.html.twig");
     }
 }

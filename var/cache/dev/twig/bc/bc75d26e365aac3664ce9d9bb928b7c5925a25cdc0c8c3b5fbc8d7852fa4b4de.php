@@ -132,6 +132,6 @@ class __TwigTemplate_a11e1b780a0fa788472b14ff0269d3970f463c2b46804215b98b40cd9d7
         </tr>
     </tbody>
 </table>
-", "@Twig/Exception/traces_text.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/traces_text.html.twig");
+", "@Twig/Exception/traces_text.html.twig", "/Users/rrtaya/Site Symfony/Symfony/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/traces_text.html.twig");
     }
 }

@@ -10,4 +10,19 @@ namespace PW\MainBundle\Repository;
  */
 class GroupeRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function getGroupeWithUsers(){
+		$qd=$this->createQueryBuilder('a');
+
+		$qd
+			->innerjoin('a.users','u')
+			->addSelect('u')
+			;
+
+			return $qd
+			->getQuery()
+			->getResult()
+			;
+	}
+
+
 }

@@ -60,6 +60,8 @@ class Groupe
         return $this->id;
     }
 
+
+
     /**
      * Set titre
      *
@@ -132,5 +134,46 @@ class Groupe
         return $this->pseudoLeader;
     }
 
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add user
+     *
+     * @param \PW\UserBundle\Entity\User $user
+     *
+     * @return Groupe
+     */
+    public function addUser(\PW\UserBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+        $user->addGroup($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \PW\UserBundle\Entity\User $user
+     */
+    public function removeUser(\PW\UserBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+}
