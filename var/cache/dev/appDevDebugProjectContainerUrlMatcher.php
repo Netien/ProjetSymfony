@@ -172,6 +172,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // pw_main_download
+        if (0 === strpos($pathinfo, '/download') && preg_match('#^/download/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'pw_main_download')), array (  '_controller' => 'PW\\MainBundle\\Controller\\CreateAndShareController::downloadAction',));
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

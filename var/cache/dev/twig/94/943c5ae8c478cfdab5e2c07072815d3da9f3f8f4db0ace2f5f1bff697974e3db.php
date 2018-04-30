@@ -2030,6 +2030,10 @@ $context["attrvalue"] === false)) {
         {%- endif -%}
     {%- endfor -%}
 {%- endblock attributes -%}
+<<<<<<< HEAD
 ", "form_div_layout.html.twig", "/Users/rrtaya/Site Symfony/Symfony/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form/form_div_layout.html.twig");
+=======
+", "form_div_layout.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form/form_div_layout.html.twig");
+>>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
     }
 }

@@ -81,6 +81,7 @@
   'TwigBundle:Exception:traces.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/traces.html.twig',
   'SwiftmailerBundle:Collector:swiftmailer.html.twig' => __DIR__.'/../../../vendor/symfony/swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig',
   'DoctrineBundle:Collector:explain.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig',
+<<<<<<< HEAD
   'DoctrineBundle:Collector:db.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig',
   'PWMainBundle:css:bootstrap.min.css' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/css/bootstrap.min.css',
   'PWMainBundle:css:bootstrap-reboot.min.css.map' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/css/bootstrap-reboot.min.css.map',
@@ -99,7 +100,12 @@
   'PWMainBundle:js:bootstrap.min.js' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/js/bootstrap.min.js',
   'PWMainBundle:js:bootstrap.js.map' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/js/bootstrap.js.map',
   'PWMainBundle:js:bootstrap.min.js.map' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/js/bootstrap.min.js.map',
+=======
+  'PWMainBundle:Default:chat.html.twig' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/Default/chat.html.twig',
+  'PWMainBundle:Default:fichiers.html.twig' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/Default/fichiers.html.twig',
+>>>>>>> 6d5477c7dc8ef80aaaeae7c8472ceaf9252f70b9
   'PWMainBundle:Default:index.html.twig' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/Default/index.html.twig',
+  'PWMainBundle::layout.html.twig' => __DIR__.'/../../../src/PW/MainBundle/Resources/views/layout.html.twig',
   'PWUserBundle::layout_auth.html.twig' => __DIR__.'/../../../src/PW/UserBundle/Resources/views/layout_auth.html.twig',
   'PWUserBundle:css:bootstrap.min.css' => __DIR__.'/../../../src/PW/UserBundle/Resources/views/css/bootstrap.min.css',
   'PWUserBundle:css:bootstrap-reboot.min.css.map' => __DIR__.'/../../../src/PW/UserBundle/Resources/views/css/bootstrap-reboot.min.css.map',
