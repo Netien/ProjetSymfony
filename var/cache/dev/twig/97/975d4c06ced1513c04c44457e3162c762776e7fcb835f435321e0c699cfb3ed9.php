@@ -10,6 +10,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         $this->parent = false;
 
         $this->blocks = array(
+            'stylesheets' => array($this, 'block_stylesheets'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -29,8 +30,11 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         <meta charset=\"utf-8\" />
         <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css\" integrity=\"sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4\" crossorigin=\"anonymous\">
-        <link rel=\"stylesheet\" href=\"/css/layout.css\">
-         <meta charset=\"utf-8\">
+        ";
+        // line 7
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 10
+        echo "         <meta charset=\"utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
 
@@ -38,51 +42,51 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
     </head>
 
     <body>
+      <div class=\"container\" style=\"height:100%;width:100%;overflow:scroll\">
       <div class=\"container\">
         <nav class=\"navbar navbar-default\">
 
-          <div class=\"container-fluid\">
-            <div class=\"navbar-header\">
+          <div class=\"container-fluid \" style=\"float:left\">
+            <div style=\"position:absolute;left:20px;width:100px\" class=\"col\" >
               <a class=\"navbar-brand\" href=\"#\">CreateAndShare</a>
             </div>
-            <div class=\"navbar col-sm-8\" id=\"navbar\">
-              <ul class=\"list-inline\">
-                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
-                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
-              </ul>
-            </div>
-            <div class=\"navbar col-sm w-25 p-3\" id=\"navbar\">
-              <ul class=\"nav navbar-nav d-flex justify-content-end\">
-                <li>fnzuofz</li>
-              </ul>
+            <div class=\"d-flex p-2 justify-content-around \" style=\"min-width:75%\">
+              
+              <div class=\"p-3\">
+                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Chat</a></p>
+              </div>
+              <div class=\"p-3\">
+                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Fichiers Partages</a></p>
+              </div>
+              <div class=\"p-3\">
+                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Projet</a></p>
+              </div>
             </div>
           </div>
         </nav>
 
 
-    <div class=\"container-fluid\">
+    <div class=\"container-fluid\" >
       <div class=\"row\">
 
         <nav class=\"col-md-2 d-none d-md-block bg-light sidebar\">
           <div class=\"sidebar-sticky\">
             <ul class=\"nav flex-column\">
 
-              <ul>
-
               ";
-        // line 47
+        // line 49
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["arraygrp"] ?? $this->getContext($context, "arraygrp")));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["groupe"]) {
-            // line 48
-            echo "                <li class=\"nav-item\">
-                  <a class=\"nav-link active\" href=\"/group/";
-            // line 49
-            echo twig_escape_filter($this->env, $this->getAttribute($context["groupe"], "id", array()), "html", null, true);
-            echo "/chat\">
-                    ";
             // line 50
+            echo "                <li class=\"nav-item\">
+                  <a class=\"nav-link active\" href=";
+            // line 51
+            echo twig_escape_filter($this->env, $this->getAttribute($context["groupe"], "url", array()), "html", null, true);
+            echo ">
+                    ";
+            // line 52
             echo twig_escape_filter($this->env, $this->getAttribute($context["groupe"], "titre", array()), "html", null, true);
             echo "
                   </a>
@@ -91,49 +95,18 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 54
+            // line 56
             echo "                <li>Pas de groupe trouve</li>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['groupe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
-        echo "
-              
-              <li class=\"nav-item\">
-                <a class=\"nav-link active\" href=\"#\">
-                  Dashboard
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  
-                  Products
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  
-                  Customers
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  
-                  Reports
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  
-                  Integrations
-                </a>
-              </li>
-            </ul>
+        // line 58
+        echo "            </ul>
           </div>
         </nav>
-    <div class=\"col-xl\">
+    <div class=\"col-xl\" >
         <main role=\"main\" class=\"col-md-9 ml-sm-auto col-lg-10 px-4\">
           <div class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">
             <h1 class=\"h2\">Dashboard</h1>
@@ -141,14 +114,15 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         
 
     \t";
-        // line 97
+        // line 68
         $this->displayBlock('body', $context, $blocks);
-        // line 99
+        // line 70
         echo "      </main>
       </div>
     \t<footer>
     \t
     \t</footer>
+</div>
 </div>
 </div>
     </body>
@@ -172,7 +146,29 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 
     }
 
-    // line 97
+    // line 7
+    public function block_stylesheets($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 8
+        echo "            <link href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("layout.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" />
+        ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 68
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -181,7 +177,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 98
+        // line 69
         echo "    \t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -203,7 +199,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
 
     public function getDebugInfo()
     {
-        return array (  185 => 98,  176 => 97,  147 => 99,  145 => 97,  102 => 56,  95 => 54,  86 => 50,  82 => 49,  79 => 48,  74 => 47,  26 => 1,);
+        return array (  181 => 69,  172 => 68,  159 => 8,  150 => 7,  120 => 70,  118 => 68,  106 => 58,  99 => 56,  90 => 52,  86 => 51,  83 => 50,  78 => 49,  37 => 10,  35 => 7,  27 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -222,7 +218,9 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
         <meta charset=\"utf-8\" />
         <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css\" integrity=\"sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4\" crossorigin=\"anonymous\">
-        <link rel=\"stylesheet\" href=\"/css/layout.css\">
+        {% block stylesheets %}
+            <link href=\"{{ asset('layout.css') }}\" rel=\"stylesheet\" />
+        {% endblock %}
          <meta charset=\"utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
@@ -231,81 +229,50 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
     </head>
 
     <body>
+      <div class=\"container\" style=\"height:100%;width:100%;overflow:scroll\">
       <div class=\"container\">
         <nav class=\"navbar navbar-default\">
 
-          <div class=\"container-fluid\">
-            <div class=\"navbar-header\">
+          <div class=\"container-fluid \" style=\"float:left\">
+            <div style=\"position:absolute;left:20px;width:100px\" class=\"col\" >
               <a class=\"navbar-brand\" href=\"#\">CreateAndShare</a>
             </div>
-            <div class=\"navbar col-sm-8\" id=\"navbar\">
-              <ul class=\"list-inline\">
-                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
-                <li class=\"list-inline-item\"><a href=\"\">aie</a></li>
-              </ul>
-            </div>
-            <div class=\"navbar col-sm w-25 p-3\" id=\"navbar\">
-              <ul class=\"nav navbar-nav d-flex justify-content-end\">
-                <li>fnzuofz</li>
-              </ul>
+            <div class=\"d-flex p-2 justify-content-around \" style=\"min-width:75%\">
+              
+              <div class=\"p-3\">
+                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Chat</a></p>
+              </div>
+              <div class=\"p-3\">
+                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Fichiers Partages</a></p>
+              </div>
+              <div class=\"p-3\">
+                <p><a href=\"\" class=\"btn btn-primary\" style=\"min-width:10%\">Projet</a></p>
+              </div>
             </div>
           </div>
         </nav>
 
 
-    <div class=\"container-fluid\">
+    <div class=\"container-fluid\" >
       <div class=\"row\">
 
         <nav class=\"col-md-2 d-none d-md-block bg-light sidebar\">
           <div class=\"sidebar-sticky\">
             <ul class=\"nav flex-column\">
 
-              <ul>
-
               {% for groupe in arraygrp %}
                 <li class=\"nav-item\">
-                  <a class=\"nav-link active\" href=\"/group/{{groupe.id}}/chat\">
+                  <a class=\"nav-link active\" href={{groupe.url}}>
                     {{ groupe.titre }}
                   </a>
                 </li>
               {% else %}
                 <li>Pas de groupe trouve</li>
               {% endfor %}
-
-              
-              <li class=\"nav-item\">
-                <a class=\"nav-link active\" href=\"#\">
-                  Dashboard
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  
-                  Products
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  
-                  Customers
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  
-                  Reports
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">
-                  
-                  Integrations
-                </a>
-              </li>
             </ul>
           </div>
         </nav>
-    <div class=\"col-xl\">
+    <div class=\"col-xl\" >
         <main role=\"main\" class=\"col-md-9 ml-sm-auto col-lg-10 px-4\">
           <div class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">
             <h1 class=\"h2\">Dashboard</h1>
@@ -319,6 +286,7 @@ class __TwigTemplate_476e3edde031ab454c38b5256d6b3b62833ec43fb4b657bfdefdb4ba98a
     \t<footer>
     \t
     \t</footer>
+</div>
 </div>
 </div>
     </body>

@@ -2,11 +2,26 @@
 
 {% block body %}
 
-<h1 class ="mytitle">{{group.titre}}</h1>
+<h1 class ="mytitle">Fichiers partagés du groupe:</h1>
 
-<div class="well">
-	{{ form(form) }}
-</div>
+<h2>soumettre nouveau : </h2>
+<form action="#" method="post" {{ form_start(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" value="Upload Document" />
+</form>
+
+<h2>fichiers actuels : </h2>
+
+{% for doc in listdocs %}
+  <li>
+    <a class="nav-link active" href={{doc.url}}>
+      {{ doc.name }}
+    </a>
+  </li>
+{% else %}
+  <li>Pas encore de fichier partagé</li>
+{% endfor %}
 
 
 {% endblock %}

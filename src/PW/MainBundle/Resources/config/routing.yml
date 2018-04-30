@@ -45,6 +45,12 @@ pw_main_project:
     requirements:
         idg: \d+
 
+pw_main_download:
+    path :      /download/{id}
+    defaults: { _controller: PWMainBundle:CreateAndShare:download }
+    requirements:
+        idg: \d+
+
 
 
 

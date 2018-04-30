@@ -7,10 +7,16 @@ class __TwigTemplate_369a826eb41c5ee98f14e3dc37cd89e92046e60d3eba6a2ed3a3e253002
     {
         parent::__construct($env);
 
-        $this->parent = false;
-
+        // line 2
+        $this->parent = $this->loadTemplate("PWMainBundle::layout.html.twig", "PWMainBundle:Default:index.html.twig", 2);
         $this->blocks = array(
+            'body' => array($this, 'block_body'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "PWMainBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -21,13 +27,7 @@ class __TwigTemplate_369a826eb41c5ee98f14e3dc37cd89e92046e60d3eba6a2ed3a3e253002
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PWMainBundle:Default:index.html.twig"));
 
-        // line 2
-        echo "
-<html>
-  <body>
-    Hello World!
-  </body>
-</html>";
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -36,14 +36,45 @@ class __TwigTemplate_369a826eb41c5ee98f14e3dc37cd89e92046e60d3eba6a2ed3a3e253002
 
     }
 
+    // line 4
+    public function block_body($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+
+        // line 5
+        echo "
+<p> Hello ";
+        // line 6
+        echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
+        echo "</p>
+
+
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "PWMainBundle:Default:index.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  25 => 2,);
+        return array (  52 => 6,  49 => 5,  40 => 4,  11 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -56,12 +87,15 @@ class __TwigTemplate_369a826eb41c5ee98f14e3dc37cd89e92046e60d3eba6a2ed3a3e253002
 
     public function getSourceContext()
     {
-        return new Twig_Source("{# src/OC/PlatformBundle/Resources/views/Default/index.html.twig #}
+        return new Twig_Source("
+{% extends \"PWMainBundle::layout.html.twig\" %}
 
-<html>
-  <body>
-    Hello World!
-  </body>
-</html>", "PWMainBundle:Default:index.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/src/PW/MainBundle/Resources/views/Default/index.html.twig");
+{% block body %}
+
+<p> Hello {{name}}</p>
+
+
+{% endblock %}
+", "PWMainBundle:Default:index.html.twig", "/Users/Etienne/Documents/Uni/PW6/sites/www/Symfony/src/PW/MainBundle/Resources/views/Default/index.html.twig");
     }
 }
